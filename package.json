@@ -1,0 +1,48 @@
+{
+  "name": "sumchecker",
+  "version": "1.0.0",
+  "author": "Mark Lee",
+  "license": "Apache-2.0",
+  "description": "Checksum validator",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malept/sumchecker.git"
+  },
+  "keywords": [
+    "checksum",
+    "hash"
+  ],
+  "bugs": {
+    "url": "https://github.com/malept/sumchecker/issues"
+  },
+  "homepage": "https://github.com/malept/sumchecker#readme",
+  "devDependencies": {
+    "eslint": "^3.3.1",
+    "eslint-config-standard": "^6.0.0-beta.3",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-standard": "^2.0.0",
+    "intern": "^3.3.1",
+    "nyc": "^8.1.0"
+  },
+  "dependencies": {
+    "debug": "^2.2.0"
+  },
+  "scripts": {
+    "test": "eslint . && intern-client config=tests/intern"
+  },
+  "eslintConfig": {
+    "env": {
+      "amd": true
+    },
+    "extends": "standard",
+    "parserOptions": {
+      "sourceType": "script"
+    },
+    "rules": {
+      "strict": [
+        "error"
+      ]
+    }
+  }
+}
