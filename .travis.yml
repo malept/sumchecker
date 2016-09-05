@@ -1,3 +1,7 @@
+os:
+- linux
+- osx
+osx_image: xcode8
 language: node_js
 node_js:
 - '4'
