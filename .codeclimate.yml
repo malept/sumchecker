@@ -5,8 +5,6 @@ engines:
     config:
       extensions:
       - .js
-  nodesecurity:
-    enabled: true
 ratings:
   paths:
   - "**.js"
