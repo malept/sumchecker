@@ -1,0 +1,12 @@
+engines:
+  eslint:
+    enabled: true
+    channel: "eslint-2"
+    config:
+      extensions:
+      - .js
+  nodesecurity:
+    enabled: true
+ratings:
+  paths:
+  - "**.js"

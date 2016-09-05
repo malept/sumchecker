@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/malept/sumchecker#readme",
   "devDependencies": {
+    "codeclimate-test-reporter": "^0.3.3",
     "eslint": "^3.3.1",
     "eslint-config-standard": "^6.0.0-beta.3",
     "eslint-plugin-promise": "^2.0.1",
@@ -29,6 +30,7 @@
     "debug": "^2.2.0"
   },
   "scripts": {
+    "ci": "eslint . && intern-client config=tests/intern reporters=Lcov && codeclimate-test-reporter < lcov.info",
     "test": "eslint . && intern-client config=tests/intern"
   },
   "eslintConfig": {

@@ -10,3 +10,7 @@ node_js:
 cache:
   directories:
   - node_modules
+addons:
+  code_climate:
+    repo_token: f38fa2f1de8a3a776fe3587f9eef2df022f9822241563e4df82cbc9ab3d7997b
+script: npm run ci
