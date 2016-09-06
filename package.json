@@ -31,7 +31,7 @@
   },
   "scripts": {
     "ci": "eslint . && intern-client config=tests/intern reporters=Lcov reporters=Console && codeclimate-test-reporter < lcov.info",
-    "test": "eslint . && intern-client config=tests/intern"
+    "test": "eslint . && intern-client config=tests/intern reporters=Pretty"
   },
   "eslintConfig": {
     "env": {
