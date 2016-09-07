@@ -43,14 +43,20 @@ class ChecksumParseError extends Error {
 class NoChecksumFoundError extends ErrorWithFilename {}
 
 class ChecksumValidator {
-  constructor (algorithm, checksumFilename) {
+  constructor (algorithm, checksumFilename, options) {
     this.algorithm = algorithm
     this.checksumFilename = checksumFilename
     this.checksums = null
+
+    if (options && options.defaultTextEncoding) {
+      this.defaultTextEncoding = options.defaultTextEncoding
+    } else {
+      this.defaultTextEncoding = 'utf8'
+    }
   }
 
   encoding (binary) {
-    return binary ? 'binary' : 'utf8'
+    return binary ? 'binary' : this.defaultTextEncoding
   }
 
   parseChecksumFile (data) {

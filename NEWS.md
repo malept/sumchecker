@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+* Optional `defaultTextEncoding` parameter in the `ChecksumValidator` constructor
+
 ## [1.0.0] - 2016-09-05
 
 Initial release.
