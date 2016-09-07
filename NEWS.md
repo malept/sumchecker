@@ -5,6 +5,7 @@
 ### Added
 
 * Optional `defaultTextEncoding` parameter in the `ChecksumValidator` constructor
+* Access to the underlying `ChecksumValidator` class
 
 ## [1.0.0] - 2016-09-05
 

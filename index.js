@@ -158,6 +158,7 @@ let sumchecker = function sumchecker (algorithm, checksumFilename, baseDir, file
 
 sumchecker.ChecksumMismatchError = ChecksumMismatchError
 sumchecker.ChecksumParseError = ChecksumParseError
+sumchecker.ChecksumValidator = ChecksumValidator
 sumchecker.NoChecksumFoundError = NoChecksumFoundError
 
 module.exports = sumchecker
