@@ -1,0 +1,7 @@
+.appveyor.yml
+.codeclimate.yml
+.editorconfig
+.npmignore
+.travis.yml
+index.js
+tests
