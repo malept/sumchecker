@@ -30,7 +30,8 @@
     "nyc": "^8.1.0"
   },
   "dependencies": {
-    "debug": "^2.2.0"
+    "debug": "^2.2.0",
+    "es6-promise": "^3.2.1"
   },
   "scripts": {
     "ci": "eslint . && intern-client config=tests/intern reporters=Lcov reporters=Console && codeclimate-test-reporter < lcov.info",

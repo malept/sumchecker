@@ -20,6 +20,7 @@ const debug = require('debug')('sumchecker')
 const crypto = require('crypto')
 const fs = require('fs')
 const path = require('path')
+const Promise = global.Promise || require('es6-promise').Promise
 
 const CHECKSUM_LINE = /^([\da-fA-F]+) ([ *])(.+)$/
 
