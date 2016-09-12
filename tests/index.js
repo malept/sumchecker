@@ -91,6 +91,16 @@ define((require) => {
           assert.instanceOf(error, sumchecker.ChecksumMismatchError)
           assert.equal(error.filename, 'wrong-checksum')
         }))
+    },
+
+    'Not specifying a text encoding defaults to utf8': function () {
+      let validator = new sumchecker.ChecksumValidator()
+      assert.equal(validator.encoding(false), 'utf8')
+    },
+
+    'Specifying a text encoding overrides the default': function () {
+      let validator = new sumchecker.ChecksumValidator('sha256', 'nonexistent.sha256sum', {defaultTextEncoding: 'hex'})
+      assert.equal(validator.encoding(false), 'hex')
     }
   })
 })
