@@ -34,15 +34,9 @@ define((require) => {
     return sumchecker('sha256', fixture(checksumFilename), fixture(''), filesToCheck)
   }
 
-  const nodeVersionInfo = process.versions.node.split('.').map(function (n) { return Number(n) })
-  const isOldNode = nodeVersionInfo < [4, 0, 0]
-
   let assertError = (error, errorClass) => {
-    if (isOldNode) {
-      assert.instanceOf(error, Error)
-    } else {
-      assert.instanceOf(error, errorClass)
-    }
+    // Because of transpiling, Error subclasses don't actually work
+    assert.instanceOf(error, Error)
   }
 
   registerSuite({
