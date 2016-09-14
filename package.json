@@ -34,10 +34,10 @@
     "es6-promise": "^3.2.1"
   },
   "scripts": {
-    "ci": "eslint . && npm run internCI",
-    "internCI": "intern-client config=tests/intern reporters=Lcov reporters=Console && codeclimate-test-reporter < lcov.info",
+    "ci": "eslint . && intern-client config=tests/intern suites=tests/index reporters=Lcov reporters=Console && codeclimate-test-reporter < lcov.info",
+    "oldNodeCI": "babel --out-file tests/transpiled.js tests/index.js && intern-client config=tests/intern suites=tests/transpiled reporters=Console",
     "prepublish": "babel --out-file build.js index.js",
-    "test": "eslint . && intern-client config=tests/intern reporters=Pretty"
+    "test": "eslint . && intern-client config=tests/intern suites=tests/index reporters=Pretty"
   },
   "eslintConfig": {
     "env": {

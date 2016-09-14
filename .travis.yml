@@ -18,7 +18,7 @@ env:
 script:
 - |
   if [[ ${TRAVIS_NODE_VERSION:0:1} = "0" ]]; then
-    npm run internCI
+    npm run oldNodeCI
   else
     npm run ci
   fi

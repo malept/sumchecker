@@ -22,7 +22,7 @@ test_script:
 - npm --version
 - ps: |
       if (($env:nodejs_version -eq "0.10") -or ($env:nodejs_version -eq "0.12")) {
-        npm run internCI
+        npm run oldNodeCI
       } else {
         npm run ci
       }
