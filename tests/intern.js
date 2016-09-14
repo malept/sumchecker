@@ -1,6 +1,5 @@
 'use strict'
 
 define({
-  excludeInstrumentation: /^(?:tests|node_modules)\//,
-  suites: ['tests/index']
+  excludeInstrumentation: /^(?:tests|node_modules)\//
 })

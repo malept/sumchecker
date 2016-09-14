@@ -20,7 +20,7 @@ define((require) => {
   const assert = require('intern/chai!assert')
   const path = require('intern/dojo/node!path')
   const registerSuite = require('intern!object')
-  const sumchecker = require('intern/dojo/node!../index')
+  const sumchecker = require('intern/dojo/node!../build')
 
   let fixture = (filename) => {
     return path.join('tests', 'fixtures', filename)
@@ -32,6 +32,11 @@ define((require) => {
 
   let testSumChecker = (checksumFilename, filesToCheck) => {
     return sumchecker('sha256', fixture(checksumFilename), fixture(''), filesToCheck)
+  }
+
+  let assertError = (error, errorClass) => {
+    // Because of transpiling, Error subclasses don't actually work
+    assert.instanceOf(error, Error)
   }
 
   registerSuite({
@@ -60,7 +65,7 @@ define((require) => {
       let deferred = this.async(1000)
       testSumChecker('invalid.sha256sum', 'example')
         .then(reject(deferred), deferred.callback(error => {
-          assert.instanceOf(error, sumchecker.ChecksumParseError)
+          assertError(error, sumchecker.ChecksumParseError)
           assert.strictEqual(error.lineNumber, 1)
           assert.strictEqual(error.line, 'invalid')
         }))
@@ -70,7 +75,7 @@ define((require) => {
       let deferred = this.async(1000)
       testSumChecker('example.sha256sum', 'nonexistent')
         .then(reject(deferred), deferred.callback(error => {
-          assert.instanceOf(error, sumchecker.NoChecksumFoundError)
+          assertError(error, sumchecker.NoChecksumFoundError)
           assert.equal(error.filename, 'nonexistent')
         }))
     },
@@ -79,7 +84,7 @@ define((require) => {
       let deferred = this.async(1000)
       testSumChecker('example.sha256sum', 'wrong-checksum')
         .then(reject(deferred), deferred.callback(error => {
-          assert.instanceOf(error, sumchecker.ChecksumMismatchError)
+          assertError(error, sumchecker.ChecksumMismatchError)
           assert.equal(error.filename, 'wrong-checksum')
         }))
     },
@@ -88,7 +93,7 @@ define((require) => {
       let deferred = this.async(1000)
       testSumChecker('example.sha256sum', ['example', 'wrong-checksum'])
         .then(reject(deferred), deferred.callback(error => {
-          assert.instanceOf(error, sumchecker.ChecksumMismatchError)
+          assertError(error, sumchecker.ChecksumMismatchError)
           assert.equal(error.filename, 'wrong-checksum')
         }))
     },

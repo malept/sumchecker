@@ -3,6 +3,8 @@ platform:
 - x64
 environment:
   matrix:
+  - nodejs_version: "0.10"
+  - nodejs_version: "0.12"
   - nodejs_version: "4"
   - nodejs_version: "5"
   - nodejs_version: "6"
@@ -18,6 +20,11 @@ install:
 test_script:
 - node --version
 - npm --version
-- npm run ci
+- ps: |
+      if (($env:nodejs_version -eq "0.10") -or ($env:nodejs_version -eq "0.12")) {
+        npm run oldNodeCI
+      } else {
+        npm run ci
+      }
 
 build: off

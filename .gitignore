@@ -1,2 +1,5 @@
 node_modules
 lcov.info
+npm-debug.log
+build.js
+tests/transpiled.js
