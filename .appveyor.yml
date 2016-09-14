@@ -20,6 +20,11 @@ install:
 test_script:
 - node --version
 - npm --version
-- npm run ci
+- ps: |
+      if (($env:nodejs_version -eq "0.10") -or ($env:nodejs_version -eq "0.12")) {
+        npm run internCI
+      } else {
+        npm run ci
+      }
 
 build: off

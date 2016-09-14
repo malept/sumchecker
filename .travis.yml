@@ -15,4 +15,10 @@ cache:
 env:
   global:
   - CODECLIMATE_REPO_TOKEN=f38fa2f1de8a3a776fe3587f9eef2df022f9822241563e4df82cbc9ab3d7997b
-script: npm run ci
+script:
+- |
+  if [[ ${TRAVIS_NODE_VERSION:0:1} = "0" ]]; then
+    npm run internCI
+  else
+    npm run ci
+  fi

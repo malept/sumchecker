@@ -34,7 +34,8 @@
     "es6-promise": "^3.2.1"
   },
   "scripts": {
-    "ci": "eslint . && intern-client config=tests/intern reporters=Lcov reporters=Console && codeclimate-test-reporter < lcov.info",
+    "ci": "eslint . && npm run internCI",
+    "internCI": "intern-client config=tests/intern reporters=Lcov reporters=Console && codeclimate-test-reporter < lcov.info",
     "prepublish": "babel --out-file build.js index.js",
     "test": "eslint . && intern-client config=tests/intern reporters=Pretty"
   },
