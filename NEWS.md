@@ -6,7 +6,7 @@
 
 ### Added
 
-* Support for Node 0.10 and 0.12 (#1)
+* Support for Node 0.10 and 0.12 via Babel (#1)
 
 ## [1.1.0] - 2016-09-06
 
@@ -19,5 +19,6 @@
 
 Initial release.
 
+[1.2.0]: https://github.com/malept/sumchecker/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/malept/sumchecker/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/malept/sumchecker/releases/tag/v1.0.0
