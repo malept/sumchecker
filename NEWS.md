@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## [1.2.0] - 2016-09-15
+
+### Added
+
+* Support for Node 0.10 and 0.12 (#1)
+
 ## [1.1.0] - 2016-09-06
 
 ### Added
