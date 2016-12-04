@@ -68,6 +68,7 @@ define((require) => {
           assertError(error, sumchecker.ChecksumParseError)
           assert.strictEqual(error.lineNumber, 1)
           assert.strictEqual(error.line, 'invalid')
+          assert.equal(error.message, 'Could not parse checksum file at line 1: invalid')
         }))
     },
 
@@ -77,6 +78,7 @@ define((require) => {
         .then(reject(deferred), deferred.callback(error => {
           assertError(error, sumchecker.NoChecksumFoundError)
           assert.equal(error.filename, 'nonexistent')
+          assert.equal(error.message, 'No checksum found in checksum file for "nonexistent".')
         }))
     },
 
@@ -86,6 +88,7 @@ define((require) => {
         .then(reject(deferred), deferred.callback(error => {
           assertError(error, sumchecker.ChecksumMismatchError)
           assert.equal(error.filename, 'wrong-checksum')
+          assert.equal(error.message, 'Generated checksum for "wrong-checksum" did not match expected checksum.')
         }))
     },
 

@@ -31,17 +31,28 @@ class ErrorWithFilename extends Error {
   }
 }
 
-class ChecksumMismatchError extends ErrorWithFilename {}
+class ChecksumMismatchError extends ErrorWithFilename {
+  constructor (filename) {
+    super(filename)
+    this.message = `Generated checksum for "${filename}" did not match expected checksum.`
+  }
+}
 
 class ChecksumParseError extends Error {
   constructor (lineNumber, line) {
     super()
     this.lineNumber = lineNumber
     this.line = line
+    this.message = `Could not parse checksum file at line ${lineNumber}: ${line}`
   }
 }
 
-class NoChecksumFoundError extends ErrorWithFilename {}
+class NoChecksumFoundError extends ErrorWithFilename {
+  constructor (filename) {
+    super(filename)
+    this.message = `No checksum found in checksum file for "${filename}".`
+  }
+}
 
 class ChecksumValidator {
   constructor (algorithm, checksumFilename, options) {
