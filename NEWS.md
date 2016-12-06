@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## [1.3.0] - 2016-12-05
+
+### Added
+
+* Human-readable messages for Errors (#2)
+
 ## [1.2.0] - 2016-09-15
 
 ### Added
@@ -19,6 +25,7 @@
 
 Initial release.
 
+[1.3.0]: https://github.com/malept/sumchecker/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/malept/sumchecker/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/malept/sumchecker/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/malept/sumchecker/releases/tag/v1.0.0
