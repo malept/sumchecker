@@ -4,7 +4,7 @@
 
 ### Removed
 
-* Support for Node 0.10 and 0.12
+* Support for Node 0.10 and 0.12 (#4)
 
 ## [1.3.0] - 2016-12-05
 
