@@ -20,7 +20,7 @@ define((require) => {
   const assert = require('intern/chai!assert')
   const path = require('intern/dojo/node!path')
   const registerSuite = require('intern!object')
-  const sumchecker = require('intern/dojo/node!../build')
+  const sumchecker = require('intern/dojo/node!../index')
 
   let fixture = (filename) => {
     return path.join('tests', 'fixtures', filename)
