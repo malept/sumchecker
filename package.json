@@ -1,6 +1,6 @@
 {
   "name": "sumchecker",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Mark Lee",
   "license": "Apache-2.0",
   "description": "Checksum validator",
