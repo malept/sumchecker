@@ -4,5 +4,4 @@
 .eslintignore
 .npmignore
 .travis.yml
-index.js
 tests
