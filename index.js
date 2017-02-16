@@ -138,7 +138,7 @@ class ChecksumValidator {
       let fullPath = path.resolve(baseDir, filename)
       debug(`Reading file with "${this.encoding(binary)}" encoding`)
       let stream = fs.createReadStream(fullPath, {encoding: this.encoding(binary)})
-      let hasher = crypto.createHash(this.algorithm)
+      let hasher = crypto.createHash(this.algorithm, {defaultEncoding: 'binary'})
       hasher.on('readable', () => {
         let data = hasher.read()
         if (data) {
