@@ -60,7 +60,7 @@ class ChecksumValidator {
     this.checksumFilename = checksumFilename
     this.checksums = null
 
-    if (options && options.hasOwnProperty("defaultTextEncoding")) {
+    if (options && options.hasOwnProperty('defaultTextEncoding')) {
       this.defaultTextEncoding = options.defaultTextEncoding
     } else {
       this.defaultTextEncoding = 'utf8'
