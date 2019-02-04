@@ -1,5 +1,5 @@
 /*
-Copyright 2016 Mark Lee
+Copyright 2016, 2017, 2019 Mark Lee and contributors
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ const debug = require('debug')('sumchecker')
 const crypto = require('crypto')
 const fs = require('fs')
 const path = require('path')
-const Promise = global.Promise || require('es6-promise').Promise
 
 const CHECKSUM_LINE = /^([\da-fA-F]+) ([ *])(.+)$/
 
