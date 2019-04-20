@@ -4,15 +4,10 @@ os:
 osx_image: xcode8
 language: node_js
 node_js:
-- '4'
-- '5'
-- '6'
-- '7'
+- '8'
+- '10'
 cache:
   directories:
   - node_modules
-env:
-  global:
-  - CODECLIMATE_REPO_TOKEN=f38fa2f1de8a3a776fe3587f9eef2df022f9822241563e4df82cbc9ab3d7997b
 script:
 - npm run ci
