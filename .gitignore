@@ -1,6 +1,6 @@
 .nyc_output
+coverage.lcov
 node_modules
-lcov.info
 npm-debug.log
 package-lock.json
 yarn.lock
