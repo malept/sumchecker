@@ -1,5 +1,5 @@
 /*
-Copyright 2016 Mark Lee
+Copyright 2016, 2017, 2019 Mark Lee and contributors
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -107,7 +107,7 @@ define((require) => {
     },
 
     'Specifying a text encoding overrides the default': function () {
-      let validator = new sumchecker.ChecksumValidator('sha256', 'nonexistent.sha256sum', {defaultTextEncoding: 'hex'})
+      let validator = new sumchecker.ChecksumValidator('sha256', 'nonexistent.sha256sum', { defaultTextEncoding: 'hex' })
       assert.equal(validator.encoding(false), 'hex')
     }
   })
