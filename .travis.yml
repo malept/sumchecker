@@ -1,13 +1,12 @@
 os:
 - linux
 - osx
-osx_image: xcode8
+dist: xenial
 language: node_js
 node_js:
 - '8'
 - '10'
 cache:
-  directories:
-  - node_modules
-script:
-- npm run ci
+  npm: true
+script: npm run ci
+after_success: npm run codecov
