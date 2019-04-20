@@ -46,13 +46,26 @@
   },
   "eslintConfig": {
     "extends": [
+      "eslint:recommended",
       "plugin:ava/recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:node/recommended",
+      "plugin:promise/recommended",
       "standard"
     ],
-    "parserOptions": {
-      "sourceType": "script"
-    },
+    "plugins": [
+      "ava"
+    ],
     "rules": {
+      "node/no-unpublished-require": [
+        "error",
+        {
+          "allowModules": [
+            "ava"
+          ]
+        }
+      ],
       "strict": [
         "error"
       ]
