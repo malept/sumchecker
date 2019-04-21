@@ -18,33 +18,57 @@
   },
   "homepage": "https://github.com/malept/sumchecker#readme",
   "engines": {
-    "node": ">= 4.0"
+    "node": ">= 8.0"
   },
   "devDependencies": {
-    "codeclimate-test-reporter": "^0.4.0",
-    "eslint": "^3.3.1",
-    "eslint-config-standard": "^6.0.0-beta.3",
-    "eslint-plugin-promise": "^3.3.0",
-    "eslint-plugin-standard": "^2.0.0",
-    "intern": "^3.3.1",
-    "nyc": "^8.1.0"
+    "ava": "^1.4.1",
+    "codecov": "^3.3.0",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-ava": "^6.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "nyc": "^14.0.0"
   },
   "dependencies": {
-    "debug": "^2.2.0"
+    "debug": "^4.1.0"
   },
   "scripts": {
-    "ci": "eslint . && intern-client config=tests/intern suites=tests/index reporters=Lcov reporters=Console && codeclimate-test-reporter < lcov.info",
-    "test": "eslint . && intern-client config=tests/intern suites=tests/index reporters=Pretty"
+    "ava": "ava test/index.js",
+    "ci": "npm run lint && npm run coverage",
+    "codecov": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "coverage": "nyc ava test/index.js",
+    "lint": "eslint .",
+    "test": "npm run lint && npm run ava"
+  },
+  "ava": {
+    "babel": false,
+    "compileEnhancements": false
   },
   "eslintConfig": {
-    "env": {
-      "amd": true
-    },
-    "extends": "standard",
-    "parserOptions": {
-      "sourceType": "script"
-    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:ava/recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:node/recommended",
+      "plugin:promise/recommended",
+      "standard"
+    ],
+    "plugins": [
+      "ava"
+    ],
     "rules": {
+      "node/no-unpublished-require": [
+        "error",
+        {
+          "allowModules": [
+            "ava"
+          ]
+        }
+      ],
       "strict": [
         "error"
       ]

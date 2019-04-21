@@ -14,8 +14,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-'use strict'
-
 const debug = require('debug')('sumchecker')
 const crypto = require('crypto')
 const fs = require('fs')
@@ -136,8 +134,8 @@ class ChecksumValidator {
 
       let fullPath = path.resolve(baseDir, filename)
       debug(`Reading file with "${this.encoding(binary)}" encoding`)
-      let stream = fs.createReadStream(fullPath, {encoding: this.encoding(binary)})
-      let hasher = crypto.createHash(this.algorithm, {defaultEncoding: 'binary'})
+      let stream = fs.createReadStream(fullPath, { encoding: this.encoding(binary) })
+      let hasher = crypto.createHash(this.algorithm, { defaultEncoding: 'binary' })
       hasher.on('readable', () => {
         let data = hasher.read()
         if (data) {
