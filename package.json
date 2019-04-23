@@ -5,6 +5,7 @@
   "license": "Apache-2.0",
   "description": "Checksum validator",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/malept/sumchecker.git"
@@ -30,18 +31,20 @@
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "nyc": "^14.0.0"
+    "nyc": "^14.0.0",
+    "tsd": "^0.7.2"
   },
   "dependencies": {
     "debug": "^4.1.0"
   },
   "scripts": {
     "ava": "ava test/index.js",
-    "ci": "npm run lint && npm run coverage",
+    "ci": "npm run lint && npm run coverage && npm run tsd",
     "codecov": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "coverage": "nyc ava test/index.js",
     "lint": "eslint .",
-    "test": "npm run lint && npm run ava"
+    "test": "npm run lint && npm run ava && npm run tsd",
+    "tsd": "tsd"
   },
   "ava": {
     "babel": false,
