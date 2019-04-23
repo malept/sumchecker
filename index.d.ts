@@ -14,22 +14,28 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-declare type ChecksumOptions = {
-  defaultTextEncoding: string;
+export type ChecksumOptions = {
+  defaultTextEncoding?: string;
 };
-export default function sumchecker(algorithm: any, checksumFilename: any, baseDir: any, filesToCheck: any): Promise<void>;
+
+export default function sumchecker(algorithm: string, checksumFilename: string, baseDir: string, filesToCheck: string[] | string): Promise<void>;
+
 export class ErrorWithFilename extends Error {
   constructor(filename: string);
 }
+
 export class ChecksumMismatchError extends ErrorWithFilename {
   constructor(filename: string);
 }
+
 export class ChecksumParseError extends Error {
   constructor(lineNumber: number, line: string);
 }
+
 export class NoChecksumFoundError extends ErrorWithFilename {
   constructor(filename: string);
 }
+
 export class ChecksumValidator {
   constructor(algorithm: string, checksumFilename: string, options?: ChecksumOptions);
   encoding(binary: boolean): string;
