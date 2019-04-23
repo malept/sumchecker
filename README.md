@@ -3,6 +3,7 @@
 [![Travis CI](https://travis-ci.org/malept/sumchecker.svg?branch=master)](https://travis-ci.org/malept/sumchecker)
 [![AppVeyor CI](https://ci.appveyor.com/api/projects/status/wm4n2r11nlff8ify?svg=true)](https://ci.appveyor.com/project/malept/sumchecker)
 [![Code Coverage](https://codecov.io/gh/malept/sumchecker/branch/master/graph/badge.svg)](https://codecov.io/gh/malept/sumchecker)
+![Dependency Status](https://tidelift.com/badges/github/malept/sumchecker)
 
 
 Sumchecker is a pure Node.js solution to validating files specified in a checksum file, which are
@@ -72,6 +73,10 @@ When at least one of the files specified to check is not listed in the checksum 
 Properties:
 
 * `filename` (`String`)- a filename from [`filesToCheck`](#filesToCheck)
+
+## Support
+
+[Get supported sumchecker with the Tidelift Subscription](https://tidelift.com/subscription/pkg/npm-sumchecker?utm_source=npm-sumchecker&utm_medium=referral&utm_campaign=readme)
 
 ## Legal
 
