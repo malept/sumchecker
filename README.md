@@ -76,7 +76,7 @@ Properties:
 
 ## Support
 
-[Get supported sumchecker with the Tidelift Subscription](https://tidelift.com/subscription/pkg/npm-sumchecker?utm_source=npm-sumchecker&utm_medium=referral&utm_campaign=readme)
+[Get supported sumchecker with the Tidelift Subscription](https://tidelift.com/subscription/pkg/npm-sumchecker?utm_source=npm-sumchecker&utm_medium=referral&utm_campaign=readme).
 
 ## Security contact information
 
