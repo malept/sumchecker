@@ -4,6 +4,8 @@
 
 ## [3.0.0] - 2019-04-30
 
+[3.0.0]: https://github.com/malept/sumchecker/compare/v2.0.2...v3.0.0
+
 ### Added
 
 * TypeScript typings file (#12)
