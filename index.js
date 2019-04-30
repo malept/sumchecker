@@ -20,7 +20,7 @@ const fs = require('fs')
 const path = require('path')
 const { promisify } = require('util')
 
-fs.readFile = promisify(fs.readFile)
+const readFile = promisify(fs.readFile)
 
 const CHECKSUM_LINE = /^([\da-fA-F]+) ([ *])(.+)$/
 
@@ -94,7 +94,7 @@ class ChecksumValidator {
 
   async readFile (filename, binary) {
     debug(`Reading "${filename} (binary mode: ${binary})"`)
-    return fs.readFile(filename, this.encoding(binary))
+    return readFile(filename, this.encoding(binary))
   }
 
   async validate (baseDir, filesToCheck) {
