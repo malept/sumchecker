@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## [3.0.0] - 2019-04-30
+
+### Added
+
+* TypeScript typings file (#12)
+
+### Removed
+
+* Support for Node &lt; 8 (#10)
+
 ## [2.0.2] - 2017-03-11
 
 ### Added
