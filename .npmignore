@@ -2,5 +2,6 @@
 .editorconfig
 .eslintignore
 .npmignore
+.nyc_output
 .travis.yml
 test
