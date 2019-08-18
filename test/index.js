@@ -74,11 +74,11 @@ test('Multiple files specified, one does not match', async t => {
 })
 
 test('Not specifying a text encoding defaults to utf8', t => {
-  let validator = new sumchecker.ChecksumValidator()
+  const validator = new sumchecker.ChecksumValidator()
   t.is(validator.encoding(false), 'utf8')
 })
 
 test('Specifying a text encoding overrides the default', t => {
-  let validator = new sumchecker.ChecksumValidator('sha256', 'nonexistent.sha256sum', { defaultTextEncoding: 'hex' })
+  const validator = new sumchecker.ChecksumValidator('sha256', 'nonexistent.sha256sum', { defaultTextEncoding: 'hex' })
   t.is(validator.encoding(false), 'hex')
 })
