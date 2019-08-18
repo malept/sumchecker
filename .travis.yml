@@ -11,3 +11,7 @@ cache:
   npm: true
 script: npm run ci
 after_success: npm run codecov
+branches:
+  only:
+  - master
+  - /^v\d+\.\d+\.\d+/
