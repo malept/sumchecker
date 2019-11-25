@@ -14,17 +14,19 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import sumchecker, { ChecksumParseError, ChecksumValidator } from '.';
+import sumchecker = require('.');
 
-await sumchecker('sha256', 'test/fixture/example.sha256sum', 'test/fixture', 'example');
-await sumchecker('sha256', 'test/fixture/example.sha256sum', 'test/fixture', ['example']);
-try {
-  await sumchecker('sha256', 'test/fixture/invalid.sha256sum', 'test/fixture', ['example']);
-} catch (error) {
-  if (!(error instanceof ChecksumParseError)) {
-    throw new Error('Does not throw ChecksumParseError correctly');
+(async () => {
+  await sumchecker('sha256', 'test/fixture/example.sha256sum', 'test/fixture', 'example');
+  await sumchecker('sha256', 'test/fixture/example.sha256sum', 'test/fixture', ['example']);
+  try {
+    await sumchecker('sha256', 'test/fixture/invalid.sha256sum', 'test/fixture', ['example']);
+  } catch (error) {
+    if (!(error instanceof sumchecker.ChecksumParseError)) {
+      throw new Error('Does not throw ChecksumParseError correctly');
+    }
   }
-}
 
-const validator = new ChecksumValidator('sha256', 'test/fixture/example.sha256sum')
-await validator.validate('test/fixture', 'example')
+  const validator = new sumchecker.ChecksumValidator('sha256', 'test/fixture/example.sha256sum')
+  await validator.validate('test/fixture', 'example')
+})
