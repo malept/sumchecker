@@ -1,7 +1,8 @@
-.appveyor.yml
 .editorconfig
 .eslintignore
+.github
 .npmignore
 .nyc_output
-.travis.yml
+index.test-d.ts
 test
+yarn.lock
