@@ -74,14 +74,9 @@ Properties:
 
 * `filename` (`String`) - a filename from [`filesToCheck`](#filesToCheck)
 
-## Support
-
-[Get supported sumchecker with the Tidelift Subscription](https://tidelift.com/subscription/pkg/npm-sumchecker?utm_source=npm-sumchecker&utm_medium=referral&utm_campaign=readme).
-
 ## Security contact information
 
-To report a security vulnerability, please use the [Tidelift security
-contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.
+See [SECURITY.md](https://github.com/malept/sumchecker/blob/master/SECURITY.md).
 
 ## Legal
 
