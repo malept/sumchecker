@@ -90,3 +90,9 @@ This library is copyrighted under the terms of the [Apache 2.0 License].
 [`crypto.createHash()`]: https://nodejs.org/dist/latest-v4.x/docs/api/crypto.html#crypto_crypto_createhash_algorithm
 [`Promise`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 [Apache 2.0 License]: http://www.apache.org/licenses/LICENSE-2.0
+
+## Enterprise support
+
+Available as part of the Tidelift Subscription.
+
+The maintainers of sumchecker and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more](https://tidelift.com/subscription/pkg/npm-sumchecker?utm_source=npm-sumchecker&utm_medium=referral&utm_campaign=enterprise&utm_term=repo).
