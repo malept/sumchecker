@@ -1,7 +1,7 @@
 # Sumchecker
 
-[![Travis CI](https://travis-ci.org/malept/sumchecker.svg?branch=master)](https://travis-ci.org/malept/sumchecker)
-[![AppVeyor CI](https://ci.appveyor.com/api/projects/status/wm4n2r11nlff8ify?svg=true)](https://ci.appveyor.com/project/malept/sumchecker)
+[![Build
+Status](https://github.com/malept/sumchecker/workflows/CI/badge.svg)](https://github.com/malept/sumchecker/actions?query=workflow%3ACI)
 [![Code Coverage](https://codecov.io/gh/malept/sumchecker/branch/master/graph/badge.svg)](https://codecov.io/gh/malept/sumchecker)
 ![Dependency Status](https://tidelift.com/badges/github/malept/sumchecker)
 
