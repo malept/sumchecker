@@ -75,5 +75,8 @@
         "error"
       ]
     }
+  },
+  "funding": {
+    "url": "https://github.com/malept/sumchecker?sponsor=1"
   }
 }
