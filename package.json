@@ -59,18 +59,7 @@
       "plugin:promise/recommended",
       "standard"
     ],
-    "plugins": [
-      "ava"
-    ],
     "rules": {
-      "node/no-unpublished-require": [
-        "error",
-        {
-          "allowModules": [
-            "ava"
-          ]
-        }
-      ],
       "strict": [
         "error"
       ]
