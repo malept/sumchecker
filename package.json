@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/malept/sumchecker#readme",
   "engines": {
-    "node": ">= 8.0"
+    "node": ">= 10.0"
   },
   "devDependencies": {
     "ava": "^2.2.0",
