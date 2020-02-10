@@ -18,8 +18,10 @@ const debug = require('debug')('sumchecker')
 const crypto = require('crypto')
 const fs = require('fs')
 const path = require('path')
+const stream = require('stream')
 const { promisify } = require('util')
 
+const pipeline = promisify(stream.pipeline)
 const readFile = promisify(fs.readFile)
 
 const CHECKSUM_LINE = /^([\da-fA-F]+) ([ *])(.+)$/
@@ -108,34 +110,32 @@ class ChecksumValidator {
   }
 
   async validateFile (baseDir, filename) {
-    return new Promise((resolve, reject) => {
-      debug(`validateFile: ${filename}`)
+    debug(`validateFile: ${filename}`)
 
-      const metadata = this.checksums[filename]
-      if (!metadata) {
-        return reject(new NoChecksumFoundError(filename))
+    let calculated
+    const metadata = this.checksums[filename]
+    if (!metadata) {
+      throw new NoChecksumFoundError(filename)
+    }
+
+    const [checksum, binary] = metadata
+    const fullPath = path.resolve(baseDir, filename)
+
+    debug(`Reading file with "${this.encoding(binary)}" encoding`)
+    const fileToCheck = fs.createReadStream(fullPath, { encoding: this.encoding(binary) })
+    const hasher = crypto.createHash(this.algorithm, { defaultEncoding: 'binary' })
+    hasher.on('readable', () => {
+      const data = hasher.read()
+      if (data) {
+        calculated = data.toString('hex')
       }
-
-      const [checksum, binary] = metadata
-      const fullPath = path.resolve(baseDir, filename)
-      debug(`Reading file with "${this.encoding(binary)}" encoding`)
-      const stream = fs.createReadStream(fullPath, { encoding: this.encoding(binary) })
-      const hasher = crypto.createHash(this.algorithm, { defaultEncoding: 'binary' })
-      hasher.on('readable', () => {
-        const data = hasher.read()
-        if (data) {
-          const calculated = data.toString('hex')
-
-          debug(`Expected checksum: ${checksum}; Actual: ${calculated}`)
-          if (calculated === checksum) {
-            resolve()
-          } else {
-            reject(new ChecksumMismatchError(filename))
-          }
-        }
-      })
-      stream.pipe(hasher)
     })
+    await pipeline(fileToCheck, hasher)
+
+    debug(`Expected checksum: ${checksum}; Actual: ${calculated}`)
+    if (calculated !== checksum) {
+      throw new ChecksumMismatchError(filename)
+    }
   }
 
   async validateFiles (baseDir, filesToCheck) {
