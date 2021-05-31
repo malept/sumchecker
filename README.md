@@ -2,7 +2,7 @@
 
 [![Build
 Status](https://github.com/malept/sumchecker/workflows/CI/badge.svg)](https://github.com/malept/sumchecker/actions?query=workflow%3ACI)
-[![Code Coverage](https://codecov.io/gh/malept/sumchecker/branch/master/graph/badge.svg)](https://codecov.io/gh/malept/sumchecker)
+[![Code Coverage](https://codecov.io/gh/malept/sumchecker/branch/main/graph/badge.svg)](https://codecov.io/gh/malept/sumchecker)
 ![Dependency Status](https://tidelift.com/badges/github/malept/sumchecker)
 [![NPM package](https://img.shields.io/npm/v/sumchecker)](https://npm.im/sumchecker)
 
@@ -81,7 +81,7 @@ Properties:
 
 ## Security contact information
 
-See [SECURITY.md](https://github.com/malept/sumchecker/blob/master/SECURITY.md).
+See [SECURITY.md](https://github.com/malept/sumchecker/blob/main/SECURITY.md).
 
 ## Legal
 
