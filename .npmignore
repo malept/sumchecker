@@ -1,7 +1,0 @@
-.editorconfig
-.github
-.npmignore
-.nyc_output
-index.test-d.ts
-test
-yarn.lock
