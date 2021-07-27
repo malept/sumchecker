@@ -38,13 +38,13 @@
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@malept/eslint-config": "^1.1.0",
     "@types/debug": "^4.1.5",
     "@types/node": "^16.4.1",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "ava": "^3.0.0",
     "eslint": "^7.27.0",
-    "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-ava": "^12.0.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-prettier": "^3.1.2",
@@ -68,30 +68,7 @@
     ]
   },
   "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "ecmaVersion": "2019",
-      "sourceType": "module"
-    },
-    "plugins": [
-      "@typescript-eslint",
-      "eslint-plugin-tsdoc"
-    ],
-    "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:ava/recommended",
-      "plugin:import/errors",
-      "plugin:import/warnings",
-      "plugin:import/typescript",
-      "plugin:prettier/recommended",
-      "plugin:promise/recommended",
-      "prettier"
-    ],
-    "rules": {
-      "strict": "error",
-      "tsdoc/syntax": "warn"
-    }
+    "extends": "@malept/eslint-config/typescript"
   },
   "funding": [
     {
