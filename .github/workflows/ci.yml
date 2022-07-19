@@ -49,7 +49,7 @@ jobs:
           NODE_VERSION: ${{ matrix.node-version }}
   # This is primarily to have a required status check
   test-completed:
-    needs: test-completed
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - run: "echo Testsuite passed"
