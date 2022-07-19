@@ -47,10 +47,19 @@ jobs:
         env:
           CI_OS: ${{ matrix.os }}
           NODE_VERSION: ${{ matrix.node-version }}
+  # This is primarily to have a required status check
+  test-completed:
+    needs: test-completed
+    runs-on: ubuntu-latest
+    steps:
+      - run: "echo Testsuite passed"
   dependabot-automerge:
-    needs: test
+    needs: test-completed
     runs-on: ubuntu-latest
     if: ${{ github.actor == 'dependabot[bot]' }}
+    permissions:
+      pull-requests: write
+      contents: write
     steps:
       - name: Dependabot metadata
         id: metadata
