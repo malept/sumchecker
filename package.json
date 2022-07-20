@@ -17,7 +17,8 @@
     "build": "tsc",
     "coverage": "nyc --reporter=lcov --reporter=text ava",
     "docs": "typedoc src/index.ts",
-    "lint": "prettier --check . && eslint --ext .ts .",
+    "lint": "prettier --check . && eslint --ext .ts . && npm run lint:docs",
+    "lint:docs": "typedoc --emit none --treatWarningsAsErrors src/index.ts",
     "prepare": "npm run build",
     "test": "npm run lint && npm run ava",
     "postinstall": "husky install"
