@@ -28,57 +28,7 @@ try {
 }
 ```
 
-Returns a [`Promise`]. The promise is resolved when all files specified in
-[`filesToCheck`](#filesToCheck) are validated. The promise is rejected otherwise.
-
-### Parameters
-
-#### `algorithm`
-
-`String` - The hash algorithm used in [`checksumFilename`](#checksumFilename). Corresponds to the
-algorithms allowed by [`crypto.createHash()`].
-
-#### `checksumFilename`
-
-`String` - The path to the checksum file.
-
-#### `baseDir`
-
-`String` - The base directory for the files specified in [`filesToCheck`](#filesToCheck).
-
-#### `filesToCheck`
-
-`Array` or `String` - one or more paths of the files that will be validated, relative to
-[`baseDir`](#baseDir).
-
-### Errors
-
-These are `sumchecker`-specific error classes that are passed to the promise's reject callback.
-
-#### `sumchecker.ChecksumMismatchError`
-
-When at least one of the files does not match its expected checksum.
-
-Properties:
-
-- `filename` (`String`) - a path to a file that did not match
-
-#### `sumchecker.ChecksumParseError`
-
-When the checksum file cannot be parsed (as in, it does not match the checksum file format).
-
-Properties:
-
-- `lineNumber` (`Number`) - the line number that could not be parsed
-- `line` (`String`) - the raw line data that could not be parsed, sans newline
-
-#### `sumchecker.NoChecksumFoundError`
-
-When at least one of the files specified to check is not listed in the checksum file.
-
-Properties:
-
-- `filename` (`String`) - a filename from [`filesToCheck`](#filesToCheck)
+For details, see the [API documentation](https://malept.github.io/sumchecker/).
 
 ## Security contact information
 
@@ -88,8 +38,6 @@ See [SECURITY.md](https://github.com/malept/sumchecker/blob/main/SECURITY.md).
 
 This library is copyrighted under the terms of the [Apache 2.0 License].
 
-[`crypto.createhash()`]: https://nodejs.org/dist/latest-v4.x/docs/api/crypto.html#crypto_crypto_createhash_algorithm
-[`promise`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 [apache 2.0 license]: http://www.apache.org/licenses/LICENSE-2.0
 
 ## Enterprise support
