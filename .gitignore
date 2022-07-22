@@ -1,0 +1,8 @@
+*-debug.log
+.nyc_output
+coverage.lcov
+dist
+docs
+node_modules
+package-lock.json
+yarn.lock
