@@ -21,7 +21,7 @@ import sumchecker, {
   ChecksumValidator,
   NoChecksumFoundError,
 } from "../src/";
-import test from "ava";
+import test from "ava"; // eslint-disable-line import/no-unresolved
 
 function fixture(filename: string): string {
   return path.join(__dirname, "fixtures", filename);
