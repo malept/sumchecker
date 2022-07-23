@@ -24,15 +24,18 @@ jobs:
         uses: actions/setup-node@v3.4.1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Cache node_modules
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+      - name: NPM cache
+        id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
         uses: actions/cache@v3.0.5
         with:
-          path: node_modules
-          key: ${{ runner.OS }}-build-${{ hashFiles('**/package.json') }}
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package.json') }}
           restore-keys: |
-            ${{ runner.OS }}-build-${{ env.cache-name }}-
-            ${{ runner.OS }}-build-
-            ${{ runner.OS }}-
+            ${{ runner.OS }}-node-
       - name: Install
         run: npm install --engine-strict
       - name: Lint
