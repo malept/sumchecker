@@ -30,7 +30,7 @@ jobs:
           echo "::set-output name=dir::$(npm config get cache)"
       - name: NPM cache
         id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
-        uses: actions/cache@v3.2.4
+        uses: actions/cache@v3.2.5
         with:
           path: ${{ steps.npm-cache-dir.outputs.dir }}
           key: ${{ runner.OS }}-node-${{ hashFiles('**/package.json') }}
