@@ -55,7 +55,7 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "nyc": "^15.0.0",
-    "prettier": "^2.0.1",
+    "prettier": "^3.0.0",
     "source-map-support": "^0.5.16",
     "ts-node": "^10.0.0",
     "typedoc": "^0.24.1",
