@@ -29,13 +29,13 @@ function fixture(filename: string): string {
 
 function testSumChecker(
   checksumFilename: string,
-  filesToCheck: string[] | string
+  filesToCheck: string[] | string,
 ): Promise<void> {
   return sumchecker(
     "sha256",
     fixture(checksumFilename),
     fixture(""),
-    filesToCheck
+    filesToCheck,
   );
 }
 
@@ -60,7 +60,7 @@ test("Checksum file not parseable", async (t) => {
     {
       instanceOf: ChecksumParseError,
       message: "Could not parse checksum file at line 1: invalid",
-    }
+    },
   )) as ChecksumParseError;
   t.is(error.lineNumber, 1);
   t.is(error.line, "invalid");
@@ -72,7 +72,7 @@ test("Specified file not found in checksum file", async (t) => {
     {
       instanceOf: NoChecksumFoundError,
       message: 'No checksum found in checksum file for "nonexistent".',
-    }
+    },
   )) as NoChecksumFoundError;
   t.is(error.filename, "nonexistent");
 });
@@ -84,7 +84,7 @@ test("Specified file does not match checksum", async (t) => {
       instanceOf: ChecksumMismatchError,
       message:
         'Generated checksum for "wrong-checksum" did not match expected checksum.',
-    }
+    },
   )) as ChecksumMismatchError;
   t.is(error.filename, "wrong-checksum");
 });
@@ -94,7 +94,7 @@ test("Multiple files specified, one does not match", async (t) => {
     testSumChecker("example.sha256sum", ["example", "wrong-checksum"]),
     {
       instanceOf: ChecksumMismatchError,
-    }
+    },
   )) as ChecksumMismatchError;
   t.is(error.filename, "wrong-checksum");
 });

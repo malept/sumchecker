@@ -112,7 +112,7 @@ export class ChecksumValidator {
   constructor(
     algorithm: string,
     checksumFilename: string,
-    options?: ChecksumOptions
+    options?: ChecksumOptions,
   ) {
     this.algorithm = algorithm;
     this.checksumFilename = checksumFilename;
@@ -157,7 +157,7 @@ export class ChecksumValidator {
 
   async validate(
     baseDir: string,
-    filesToCheck: string[] | string
+    filesToCheck: string[] | string,
   ): Promise<void> {
     if (typeof filesToCheck === "string") {
       filesToCheck = [filesToCheck];
@@ -204,10 +204,10 @@ export class ChecksumValidator {
 
   async validateFiles(
     baseDir: string,
-    filesToCheck: string[]
+    filesToCheck: string[],
   ): Promise<void[]> {
     return Promise.all(
-      filesToCheck.map((filename) => this.validateFile(baseDir, filename))
+      filesToCheck.map((filename) => this.validateFile(baseDir, filename)),
     );
   }
 }
@@ -242,10 +242,10 @@ export default async function sumchecker(
   algorithm: string,
   checksumFilename: string,
   baseDir: string,
-  filesToCheck: string[] | string
+  filesToCheck: string[] | string,
 ): Promise<void> {
   return new ChecksumValidator(algorithm, checksumFilename).validate(
     baseDir,
-    filesToCheck
+    filesToCheck,
   );
 }
