@@ -10,7 +10,7 @@
   "author": "Mark Lee",
   "license": "Apache-2.0",
   "engines": {
-    "node": ">= 14.19.0"
+    "node": "^16.0.0 || >=18.0.0"
   },
   "scripts": {
     "ava": "ava",
@@ -91,8 +91,5 @@
   },
   "nyc": {
     "extends": "@istanbuljs/nyc-config-typescript"
-  },
-  "volta": {
-    "node": "14.19.0"
   }
 }
