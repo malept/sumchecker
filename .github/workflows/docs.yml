@@ -31,7 +31,7 @@ jobs:
             ${{ runner.OS }}-node-
       - run: npm install --engine-strict
       - run: npm run docs
-      - uses: malept/github-action-gh-pages@v1.3.0
+      - uses: malept/github-action-gh-pages@v1.3.1
         with:
           defaultBranch: main
           docsPath: docs
